@@ -1,0 +1,59 @@
+html,
+body {
+  height: 100%;
+  font-family: 'Microsoft YaHei';
+  color: #333333;
+  background-color: #f7f7f7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.adm-page-indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #c5d1c4;
+}
+
+.adm-page-indicator-dot-active {
+  background-color: #818d80;
+}
+
+.fixBtm {
+  position: fixed;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 2000;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #cccccc;
+}
+
+.imgStyle {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 5px;
+}
+
+.flexStyle1 {
+  display: flex;
+  height: 80px;
+  width: 100vw;
+  background-color: #ffffff;
+
+  .flexStyle2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .flexStyle3 {
+      flex: 1;
+      text-align: center;
+    }
+  }
+}
