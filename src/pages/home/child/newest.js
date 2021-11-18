@@ -2,7 +2,6 @@ import React, { useContext} from 'react'
 import myContextContext from '@/utils/createContext'
 function Newest() {
   const  {newsList}  = useContext(myContextContext)
-  console.log(newsList)
   return (
     <>
     <div className='news'>

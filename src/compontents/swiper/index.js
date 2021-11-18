@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom'
 function SwiperList() {
   const { imgUrl } = useContext(myContextContext)
   const history = useHistory()
+
   const items = imgUrl.map((item) => (
     <Swiper.Item key={item.id}>
       <Image src={item.imgSrc}></Image>

@@ -1,10 +1,14 @@
 html,
-body {
+body,
+#root,
+.App {
   height: 100%;
   font-family: 'Microsoft YaHei';
   color: #333333;
   background-color: #f7f7f7;
 }
+
+
 
 * {
   margin: 0;
