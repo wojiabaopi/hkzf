@@ -1,10 +1,30 @@
-import React from "react"
-function RentGroups () {
+import React, { useContext } from "react"
+import myContextContext from '@/utils/createContext'
+function RentGroups() {
+  const { rentGroupsList } = useContext(myContextContext)
   return (
     <>
-    <h2>租房小组</h2>
+      <div className='rentFather'>
+        <div className='rentDiv1'>
+          <h2 className='rentGroup'>租房小组</h2>
+          <span>更多</span>
+        </div>
+        <div className='rentDiv2'> {
+          rentGroupsList.map((item, index) => (
+              <div  key={index} className='rentItem'>
+                <div className='leftRent' >
+                  <div className='title'>{item.title}</div>
+                  <div className='desc'>{item.desc}</div>
+                </div>
+                <div className='rightRent'>
+                  <img className='rentImg' src={item.imgSrc}></img>
+                </div>
+              </div>
+          ))
+        } </div>
+      </div>
     </>
   )
 }
 
-export default RentGroups
+export default React.memo(RentGroups)

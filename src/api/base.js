@@ -15,3 +15,10 @@ export const getRendGroups = () => {
     url: '/home/groups'
   })
 }
+// 最新资讯
+export const getNewsList = () => {
+  return axios({
+    method: 'get',
+    url: '/home/news'
+  })
+}

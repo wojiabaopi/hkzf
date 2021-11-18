@@ -4,4 +4,4 @@ function Lease() {
     <h2>出租</h2>
   )
 }
-export default Lease
+export default React.memo(Lease)

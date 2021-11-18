@@ -6,4 +6,4 @@ function WholeRent() {
     <h2>整租</h2>
   )
 }
-export default WholeRent
+export default React.memo(WholeRent)

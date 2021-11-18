@@ -1,9 +1,9 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import img1 from '../../assets/icon/img1.png'
-import img2 from '../../assets/icon/img2.png'
-import img3 from '../../assets/icon/img3.png'
-import img4 from '../../assets/icon/img4.png'
+import img1 from '@/assets/icon/img1.png'
+import img2 from '@/assets/icon/img2.png'
+import img3 from '@/assets/icon/img3.png'
+import img4 from '@/assets/icon/img4.png'
 function NavGiat() {
   const history = useHistory()
   const setPath = (value) => {
@@ -46,4 +46,4 @@ function NavGiat() {
     </div>
   )
 }
-export default NavGiat
+export default React.memo(NavGiat)

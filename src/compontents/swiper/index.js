@@ -1,18 +1,39 @@
-import React, { useContext } from 'react'
+import React, { useContext} from 'react'
 import { Swiper, Image } from 'antd-mobile'
-import myContextContext from '../../utils/createContext'
+import myContextContext from '@/utils/createContext'
+import { DownFill, SearchOutline } from 'antd-mobile-icons'
+import location from '@/assets/icon/location.png'
+import { useHistory } from 'react-router-dom'
 function SwiperList() {
   const { imgUrl } = useContext(myContextContext)
+  const history = useHistory()
   const items = imgUrl.map((item) => (
     <Swiper.Item key={item.id}>
       <Image src={item.imgSrc}></Image>
     </Swiper.Item>
   ))
   return (
-    <Swiper indicatorProps={{
-      color: 'white',
-    }} autoplay>{items}</Swiper>
+    <div className='swiperOut'>
+      <Swiper indicatorProps={{
+        color: 'white',
+      }} autoplay>{items}
+      </Swiper>
+      <div className='searchBox'>
+        <div onClick={ () => history.push('/cityList')} className='leftCity'>
+          <h4>上海</h4>
+          <DownFill className='cityIcon' />
+          <span>|</span>
+        </div>
+        <div onClick={ () => history.push('/searchPage')} className='centerSearch'>
+          <SearchOutline className='searchIcon' />
+          <span>请输入小区或地址</span>
+        </div>
+        <div onClick={ () => history.push('/mapFindRoom')} className='rightLocation'>
+          <img src={location}></img>
+        </div>
+      </div>
+    </div>
   )
 }
-export default SwiperList
+export default React.memo(SwiperList)
 

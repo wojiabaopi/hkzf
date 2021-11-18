@@ -53,4 +53,4 @@ function TabBarList() {
     </div>
   )
 }
-export default TabBarList
+export default React.memo(TabBarList)

@@ -4,4 +4,4 @@ function Sharing() {
     <h2>合租</h2>
   )
 }
-export default Sharing
+export default React.memo(Sharing)

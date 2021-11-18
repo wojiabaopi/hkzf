@@ -1,4 +1,5 @@
-import Routers from './router/index'
+import Routers from '@/router/index'
+import React from 'react'
 function App() {
   return (
     <>
@@ -7,5 +8,5 @@ function App() {
   )
 }
 
-export default App;
+export default React.memo(App);
 
