@@ -37,7 +37,7 @@ function NavGiat() {
         {
           navArr.map((item, index) => (
             <div onClick={ () => setPath(item.path)} className='flexStyle3' key={index}>
-              <img className='imgStyle' src={item.icon}></img>
+              <img alt='图片' className='imgStyle' src={item.icon}></img>
               <h3>{item.title}</h3>
             </div>
           ))

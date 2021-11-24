@@ -10,7 +10,7 @@ function Newest() {
         newsList.map( item => (
           <div className='newsDiv' key={item.id}>
             <div className='leftDiv'>
-              <img src={item.imgSrc}></img>
+              <img alt='item' src={item.imgSrc}></img>
             </div>
             <div className='rightDiv'>
               <div className='title'>

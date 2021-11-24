@@ -22,3 +22,31 @@ export const getNewsList = () => {
     url: '/home/news'
   })
 }
+
+// 当前城市信息
+export const getLocalCity = (name) => {
+  return axios({
+    method: 'get',
+    url: '/area/info',
+    params: {
+      name
+    }
+  })
+}
+// 获取所有城市信息
+export const getAllCityInfo = (level) => {
+  return axios({
+    method: 'get',
+    url: '/area/city',
+    params: {
+      level,
+    }
+  })
+}
+// 获取热门城市
+export const getHotCity = () => {
+  return axios({
+    method: 'get',
+    url: '/area/hot',
+  })
+}

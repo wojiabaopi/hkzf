@@ -6,8 +6,8 @@ import location from '@/assets/icon/location.png'
 import { useHistory } from 'react-router-dom'
 function SwiperList() {
   const { imgUrl } = useContext(myContextContext)
+  const {city} = useContext(myContextContext)
   const history = useHistory()
-
   const items = imgUrl.map((item) => (
     <Swiper.Item key={item.id}>
       <Image src={item.imgSrc}></Image>
@@ -21,7 +21,7 @@ function SwiperList() {
       </Swiper>
       <div className='searchBox'>
         <div onClick={ () => history.push('/cityList')} className='leftCity'>
-          <h4>上海</h4>
+          <h4>{city}</h4>
           <DownFill className='cityIcon' />
           <span>|</span>
         </div>
@@ -30,7 +30,7 @@ function SwiperList() {
           <span>请输入小区或地址</span>
         </div>
         <div onClick={ () => history.push('/mapFindRoom')} className='rightLocation'>
-          <img src={location}></img>
+          <img alt='本地' src={location}></img>
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ function RentGroups() {
                   <div className='desc'>{item.desc}</div>
                 </div>
                 <div className='rightRent'>
-                  <img className='rentImg' src={item.imgSrc}></img>
+                  <img alt='图片' className='rentImg' src={item.imgSrc}></img>
                 </div>
               </div>
           ))
