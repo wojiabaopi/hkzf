@@ -2,6 +2,36 @@
   font-size: 17px;
   padding: 10px 0;
 }
+.color-gray {
+  color: #999999;
+}
+.cityPosition {
+  background-color: #fcfffc;
+  .locaalPosition {
+    height: 20px;
+    width: 100%;
+    margin: 10px 20px;
+    position: relative;
+    .icon1 {
+      font-size: 15px;
+      background-color: #13a379;
+      color: #ffffff;
+      border-radius: 50%;
+      padding: 0 3px;
+      position: absolute;
+      right: 25px;
+    }
+  }
+  .hotPosition {
+    margin: 0 20px;
+    position: relative;
+    .hotTitle {
+      position: absolute;
+      right: -12px;
+    }
+  }
+}
+
 .rentFather {
   margin: 20px 10px;
   .rentDiv1 {
@@ -143,5 +173,25 @@
         border-radius: 50%;
       }
     }
+  }
+}
+
+
+.city {
+  .title {
+    font-size: 14px;
+    padding: 10px 15px;
+    color: #999;
+  }
+  .name {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    line-height: 50px;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    cursor: pointer;
   }
 }
