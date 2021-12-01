@@ -8,16 +8,22 @@ import TabBarList from '@/compontents/tabBar/index'
 import RentGroups from '@/compontents/rentGroups/index'
 import Newest from './child/newest'
 function Home() {
+
   let [imgUrl, setImgUrl] = useState([])
   let [rentGroupsList, setRentGroupsList] = useState([])
   let [newsList, setNewsList] = useState([])
   let [city, setCity] = useState('')
   useEffect(() => {
-    const myCity = new window.BMap.LocalCity()
-    myCity.get( async res => {
-      let result = await  getLocalCity(res.name.slice(0, 2))
-      setCity(result.body.label)
-    })
+    let curCity = JSON.parse(localStorage.getItem('currentCity')).label
+    if(curCity !== '') {
+      setCity(curCity)
+    } else {
+      const myCity = new window.BMap.LocalCity()
+      myCity.get( async res => {
+        let result = await  getLocalCity(res.name.slice(0, 2))
+        setCity(result.body.label)
+      })
+    }
     getSwiperUrl().then(res => {
       res.body.forEach(item => {
         item.imgSrc = url + item.imgSrc
