@@ -12,10 +12,11 @@ function SwiperList() {
   }
   const { city } = useContext(myContextContext)
   const history = useHistory()
-  const items = imgUrl.map((item) => (
-    <Swiper.Item key={item.id}>
+  const items = imgUrl.map((item, index) => (
+    <Swiper.Item key={index}>
       <Image src={item.imgSrc}></Image>
     </Swiper.Item>
+    
   ))
   return (
     <div className='swiperOut'>
