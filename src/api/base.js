@@ -50,3 +50,14 @@ export const getHotCity = () => {
     url: '/area/hot',
   })
 }
+
+// 地图找房 房源信息
+export const getHouseInfo = (id) => {
+  return axios({
+    method: 'get',
+    url: '/area/map',
+    params: {
+      id,
+    }
+  })
+}
