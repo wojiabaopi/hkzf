@@ -189,9 +189,9 @@ export default class MapFindRoom extends React.Component {
       if (point) {
         map.centerAndZoom(point, 11)
         // 开启鼠标滚动缩放地图
-        map.enableScrollWheelZoom()  
-        // map.addControl(new window.BMap.ScaleControl())
-        // map.addControl(new window.BMap.NavigationControl())
+        // map.enableScrollWheelZoom()  
+        map.addControl(new window.BMap.ScaleControl())
+        map.addControl(new window.BMap.NavigationControl())
 
         this.renderOverlays(value)
 
