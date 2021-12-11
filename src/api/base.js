@@ -61,3 +61,13 @@ export const getHouseInfo = (id) => {
     }
   })
 }
+// 地图找房 社区房源列表
+export const getHouseList = (params) => {
+  return axios({
+    method: 'get',
+    url: '/houses',
+    params: {
+      ...params
+    }
+  })
+}
