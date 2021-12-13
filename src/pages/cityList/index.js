@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef } from 'react'
 import { NavBar, Toast } from 'antd-mobile'
 import { useHistory } from 'react-router-dom'
 import { getAllCityInfo, getHotCity, getLocalCity } from '@/api/base'
-
 import { AutoSizer, List } from 'react-virtualized';
+import { LoadingShow, LoadingHide} from '@/utils/loading'
 import 'react-virtualized/styles.css'; // only needs to be imported once
 
 // List data as an array of strings
@@ -103,6 +103,7 @@ function CityList() {
     }
   }
   useEffect( () => {
+    LoadingShow()
     async function getData() {
       const myCity = new window.BMap.LocalCity()
       myCity.get(async res => {
@@ -117,6 +118,7 @@ function CityList() {
         setCityArray(cityList)
         setCityIndex(cityIndex)
         reactRef.current.measureAllRows()
+        LoadingHide()
       })
     }
     getData()
@@ -126,7 +128,7 @@ function CityList() {
 
   return (
     <div style={{ backgroundColor: '#ffffff', height: '100%', paddingTop: '45px' }}>
-      <NavBar style={{ backgroundColor: '#f4f4f4', marginTop: '-45px' }} onBack={() => history.push('/home')}>城市选择</NavBar>
+      <NavBar style={{ backgroundColor: '#f4f4f4', marginTop: '-45px' }} onBack={() => history.goBack()}>城市选择</NavBar>
       {/* <div className='cityPosition'>
         <div className='locaalPosition'>
           <span className='color-gray'>当前定位</span>

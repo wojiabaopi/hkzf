@@ -1,5 +1,5 @@
 import axios from 'axios'
-axios.defaults.baseURL = 'http://localhost:8080'
+axios.defaults.baseURL = process.env.REACT_APP_URL
 axios.defaults.timeout = 10000;
 axios.interceptors.response.use( res => {
   return res.data

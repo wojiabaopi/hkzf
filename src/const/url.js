@@ -1,2 +1,2 @@
-const url = 'http://localhost:8080'
+const url = process.env.REACT_APP_URL
 export default url 

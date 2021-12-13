@@ -5,6 +5,7 @@ import { getHouseInfo, getHouseList } from '@/api/base'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 import url from '@/const/url'
+import { LoadingShow, LoadingHide } from '@/utils/loading'
 const labelStyle = {
   cursor: 'pointer',
   border: '0px solid rgb(255,0,0)',
@@ -26,14 +27,9 @@ export default class MapFindRoom extends React.Component {
   }
   // 渲染覆盖物
   async renderOverlays(id) {
-    Toast.show({
-      icon: 'loading',
-      content: '数据加载中....',
-      duration: 0,
-      maskClickable: false
-    })
+    LoadingShow()
     let res = await getHouseInfo(id)
-    Toast.clear()
+    LoadingHide()
     let { nextZoom, type } = this.getTypeAndZoom()
     res.body.forEach(item => {
       this.createOverlays(item, nextZoom, type)
@@ -98,17 +94,12 @@ export default class MapFindRoom extends React.Component {
   }
   // 获取小区房源数据列表
   async getHousesList(id) {
-    Toast.show({
-      icon: 'loading',
-      content: '数据加载中....',
-      duration: 0,
-      maskClickable: false
-    })
+    LoadingShow()
     let params = {
       cityId: id,
     }
     const res = await getHouseList(params)
-    Toast.clear()
+    LoadingHide()
     this.setState({
       houseList: res.body.list,
       isShow: true
@@ -238,7 +229,7 @@ export default class MapFindRoom extends React.Component {
   render() {
     return (
       <div className='map'>
-        <NavBar style={{ backgroundColor: '#f4f4f4', marginTop: '-45px' }} onBack={() => this.props.history.push('/home')}>地图找房</NavBar>
+        <NavBar style={{ backgroundColor: '#f4f4f4', marginTop: '-45px' }} onBack={() => this.props.history.goBack()}>地图找房</NavBar>
         <div id='container'></div>
 
         <div className={classNames({
@@ -247,7 +238,7 @@ export default class MapFindRoom extends React.Component {
         })}>
           <div className='titleWrap'>
             <h1 className='listTitle'>房屋列表</h1>
-            <Link className='titleMore' to='/home/list'>
+            <Link className='titleMore' to='/find'>
               更多房源
             </Link>
           </div>
